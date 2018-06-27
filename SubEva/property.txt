@@ -1,0 +1,4 @@
+threshold 100
+number_methods 8
+number_groups 8
+display_results 1
