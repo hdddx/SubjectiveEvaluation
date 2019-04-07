@@ -1434,21 +1434,21 @@ if isequal(str,true)
                                     case 'OK'    
                                         close(handles.subEva);
                                         h = results;
-%                                          method_name = '1 2 3 4 5 6 7 8 9';
-%                                          final_score = [15 21 17 22 19 23 20 20 18];
+    %                                      method_name = 'CGI CUBIC FCGI LMMSE NARM NEDI RSAI SAI SME';
+    %                                      final_score = [20 12 20 10 19 11 20 19 18];
                                         names = regexp(method_name,'\s','split');
                                         bar(final_score',0.5);
                                         set(gca,'XTickLabel',names);
                                         set(gca,'YLim',[0 (max(final_score)+floor(max(final_score)/9))]);%y轴的数据显示范围
                                         set(gca,'YTick',0:5:(max(final_score)+floor(max(final_score)/9)));
-%                                         for i=1:1:length(final_score)
-%                                             t = text(i,final_score(i)+0.5,num2str(final_score(i)));
-%                                             t.FontSize = 12;                                    
-%                                         end
+    %                                     for i=1:1:length(final_score)
+    %                                         t = text(i,final_score(i)+0.5,num2str(final_score(i)));
+    %                                         t.FontSize = 12;                                    
+    %                                     end
                                         xlabel('The algorithms under evaluation','fontsize',16);
-                                        ylabel('MOSs','fontsize',16);
-                                        title('The results of evaluation','fontsize',16);
-                                        set(gca,'Fontsize',16);
+                                        ylabel('MOSs','fontsize',18);
+                                        title('The results of evaluation','fontsize',18);
+                                        set(gca,'Fontsize',15);
                                         set(gcf,'NumberTitle','off');
                                         set(gcf,'Name','Results');
                                     case 'Cancel'
@@ -1627,7 +1627,7 @@ else
             hs = msgbox(s,'Warning','warn');%对话框警告
             ht = findobj(hs,'Type','text');%寻找msgbox句柄
             set(ht, 'FontSize',11,'Unit','normal');%设置字体大小
-%             set(hs, 'Resize','on');%自动设置窗口大小
+            set(hs, 'Resize','on');%自动设置窗口大小
 
 end
 
@@ -1840,14 +1840,14 @@ function ButtonMotionFcn(varargin)
     delete(b);
     delete(c);
     delete(d);
-    a = line([x,m],[y,y],'color',[1,0,0],'linewidth',4);
-    b = line([x,x],[y,n],'color',[1,0,0],'linewidth',4);
-    c = line([x,m],[n,n],'color',[1,0,0],'linewidth',4);
-    d = line([m,m],[y,n],'color',[1,0,0],'linewidth',4);  
-%     a = line([x,m],[y,y],'color',[0.5,0.5,0.5],'linewidth',2);
-%     b = line([x,x],[y,n],'color',[0.5,0.5,0.5],'linewidth',2);
-%     c = line([x,m],[n,n],'color',[0.5,0.5,0.5],'linewidth',2);
-%     d = line([m,m],[y,n],'color',[0.5,0.5,0.5],'linewidth',2); 
+%     a = line([x,m],[y,y],'color',[1,0,0],'linewidth',4);
+%     b = line([x,x],[y,n],'color',[1,0,0],'linewidth',4);
+%     c = line([x,m],[n,n],'color',[1,0,0],'linewidth',4);
+%     d = line([m,m],[y,n],'color',[1,0,0],'linewidth',4);  
+    a = line([x,m],[y,y],'color',[0.5,0.5,0.5],'linewidth',2);
+    b = line([x,x],[y,n],'color',[0.5,0.5,0.5],'linewidth',2);
+    c = line([x,m],[n,n],'color',[0.5,0.5,0.5],'linewidth',2);
+    d = line([m,m],[y,n],'color',[0.5,0.5,0.5],'linewidth',2); 
 return;
 
 function changeMouse(varargin)
